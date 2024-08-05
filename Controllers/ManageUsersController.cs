@@ -1,13 +1,11 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using ChatSite.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreTodo.Controllers
+namespace ChatSite.Controllers
 {
 	[Authorize(Roles = "Administrator")]
 	public class ManageUsersController : Controller

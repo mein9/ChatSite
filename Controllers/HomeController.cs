@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ChatSite.Models;
 
-namespace AspNetCoreTodo.Controllers;
+namespace ChatSite.Controllers;
 
 public class HomeController : Controller
 {
