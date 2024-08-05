@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTodo;
+﻿namespace ChatSite;
 
 public static class Constants
 {

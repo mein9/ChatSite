@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using AspNetCoreTodo.Models;
+using ChatSite.Models;
 
 namespace AspNetCoreTodo.Controllers;
 

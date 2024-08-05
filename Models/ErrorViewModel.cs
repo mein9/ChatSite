@@ -1,4 +1,4 @@
-namespace AspNetCoreTodo.Models;
+namespace ChatSite.Models;
 
 public class ErrorViewModel
 {

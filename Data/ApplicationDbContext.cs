@@ -1,8 +1,8 @@
-﻿using AspNetCoreTodo.Models;
+﻿using ChatSite.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreTodo.Data;
+namespace ChatSite.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {

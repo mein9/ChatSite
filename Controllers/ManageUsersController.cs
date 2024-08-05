@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using AspNetCoreTodo.Models;
+using ChatSite.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreTodo.Controllers

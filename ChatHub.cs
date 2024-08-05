@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Data;
-using AspNetCoreTodo.Models;
+using ChatSite.Data;
+using ChatSite.Models;
 using System;
 using Microsoft.AspNetCore.Authorization;
 

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using AspNetCoreTodo.Data;
-using AspNetCoreTodo.Models;
+using ChatSite.Data;
+using ChatSite.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;

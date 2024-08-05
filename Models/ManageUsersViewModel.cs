@@ -1,8 +1,8 @@
-using AspNetCoreTodo.Models;
+using ChatSite.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace AspNetCoreTodo.Models
+namespace ChatSite.Models
 {
 	public class ManageUsersViewModel
 	{

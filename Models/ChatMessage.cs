@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspNetCoreTodo.Models
+namespace ChatSite.Models
 {
     public class ChatMessage
     {
