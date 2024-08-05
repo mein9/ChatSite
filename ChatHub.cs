@@ -4,22 +4,28 @@ using ChatSite.Data;
 using ChatSite.Models;
 using System;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
-[Authorize] // Add this line to restrict access to authenticated users
+[Authorize] // Restrict access to authenticated users
 public class ChatHub : Hub
 {
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<IdentityUser> _userManager;
 
-    public ChatHub(ApplicationDbContext context)
+    public ChatHub(ApplicationDbContext context, UserManager<IdentityUser> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
 
-    public async Task SendMessage(string user, string message)
+    public async Task SendMessage(string message)
     {
+        var user = await _userManager.GetUserAsync(Context.User);
+        var username = user?.UserName ?? "Anonymous";
+
         var chatMessage = new ChatMessage
         {
-            User = user,
+            User = username,
             Message = message,
             Timestamp = DateTime.UtcNow
         };
@@ -27,6 +33,6 @@ public class ChatHub : Hub
         _context.ChatMessages.Add(chatMessage);
         await _context.SaveChangesAsync();
 
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+        await Clients.All.SendAsync("ReceiveMessage", username, message);
     }
 }

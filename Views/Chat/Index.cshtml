@@ -7,10 +7,8 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    <input type="text" id="userInput" placeholder="Your name" />
-    <br />
     <input type="text" id="messageInput" placeholder="Your message" />
-    <button onclick="sendMessage()">Send</button>
+    <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
 </div>
 
 <ul id="messagesList">
@@ -20,6 +18,5 @@
     }
 </ul>
 
-<!-- SignalR client script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
 <script src="~/js/chat.js"></script>

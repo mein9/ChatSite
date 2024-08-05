@@ -9,15 +9,21 @@ connection.on("ReceiveMessage", function (user, message) {
     document.getElementById("messagesList").appendChild(li);
 });
 
-connection.start().catch(function (err) {
+connection.start().then(function () {
+    document.getElementById("sendButton").disabled = false;
+}).catch(function (err) {
     return console.error(err.toString());
 });
 
 function sendMessage() {
-    const user = document.getElementById("userInput").value;
     const message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", user, message).catch(function (err) {
+    connection.invoke("SendMessage", message).catch(function (err) {
         return console.error(err.toString());
     });
     document.getElementById("messageInput").value = '';
 }
+
+document.getElementById("sendButton").addEventListener("click", function (event) {
+    sendMessage();
+    event.preventDefault();
+});
