@@ -1,0 +1,25 @@
+@model IEnumerable<AspNetCoreTodo.Models.ChatMessage>
+
+@{
+    ViewData["Title"] = "Chat"; // Set the title for the Chat page
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <input type="text" id="userInput" placeholder="Your name" />
+    <br />
+    <input type="text" id="messageInput" placeholder="Your message" />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<ul id="messagesList">
+    @foreach (var message in Model)
+    {
+        <li>@message.User: @message.Message</li>
+    }
+</ul>
+
+<!-- SignalR client script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>
