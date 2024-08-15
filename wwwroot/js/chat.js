@@ -12,15 +12,21 @@ connection.on("ReceiveMessage", function (user, message) {
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
 }).catch(function (err) {
-    return console.error(err.toString());
+    console.error(err.toString());
 });
 
 function sendMessage() {
+    const user = document.getElementById("userInput").value;
     const message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", message).catch(function (err) {
-        return console.error(err.toString());
-    });
-    document.getElementById("messageInput").value = '';
+    if (message.trim() !== "") {
+        console.log("Sending message:", message);
+        connection.invoke("SendMessage", message).catch(function (err) {
+            console.error(err.toString());
+        });
+        document.getElementById("messageInput").value = '';
+    } else {
+        console.log("Empty message not sent.");
+    }
 }
 
 document.getElementById("sendButton").addEventListener("click", function (event) {
